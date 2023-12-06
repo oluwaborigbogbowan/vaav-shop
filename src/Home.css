@@ -1,0 +1,16 @@
+.home__row{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+.home{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
