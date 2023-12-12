@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 :root{
   --theme-ui-colors-primary: #0c6525;
   --theme-ui-colors-background: #FFFFFF;
@@ -9,7 +10,9 @@ body{
   /* background:  linear-gradient(to bottom, var(--theme-ui-colors-primary), var(--theme-ui-colors-background)); */
   background-color: var(--theme-ui-colors-border_color);
   height: 100vh;
+  
 }
 *{
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }

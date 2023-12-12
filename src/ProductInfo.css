@@ -1,0 +1,105 @@
+
+.productInfo__upper{
+    display: flex;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--theme-ui-colors-primary);
+}
+.productInfo__img{
+    width: 300px;
+    margin-right: 10px;
+}
+
+.productinfo__img__main{
+    width: 100%;
+}
+.productInfo__img__button{
+    display: flex;
+}
+.productInfo__img__button * img{
+    width: 35px;
+    height: 35px;
+}
+.productInfo__img__button * button{
+    margin-right: 5px;
+    border: none;
+}
+.productInfo__button *{
+    background-color: var(--theme-ui-colors-primary);
+    border: none;
+    color: #ffffff;
+    font: 16px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn1 , .btn2 {
+    margin-right: 5px;
+}
+
+
+.productInfo__price{
+    font-size: 20px;
+    color: var(--theme-ui-colors-heading);
+    margin-bottom: 5px;
+}
+.productInfo__description, .productInfo__feature {
+    border-bottom: 1px solid var(--theme-ui-colors-primary);
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.productInfo__specification{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.devices{
+    
+    width: 100%;
+    margin: 0;
+}
+.device__title{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.device__title > h2{
+    font-size: 15px;
+    border-bottom: 1px solid var(--theme-ui-colors-primary);
+}
+.device__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    
+}
+.device__list > div{
+    background-color: var(--theme-ui-colors-primary);
+    color: white;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+br{
+    margin: 0;
+}
+.productInfo__battery *{
+    background-color: var(--theme-ui-colors-primary);
+    border: none;
+    color: #ffffff;
+    font: 16px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 45%;
+    
+}
+.productInfo__battery *:focus{
+    opacity: 0.3;
+}
+#batt1{
+ margin-right: 10px;
+}
