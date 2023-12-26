@@ -33,7 +33,7 @@ function MyDialog() {
              description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ea perferendis nesciunt quos at neque dolore totam iste ipsa, dolorem iusto velit fugit animi expedita sunt deserunt voluptatibus quisquam sapiente!'
             />
         </Button>
-        <Dialog open={open} onClose={handleClose} maxWidth='xl'>
+        <Dialog open={open} onClose={handleClose} maxWidth='xl' sx={{zIndex:1, }}>
         <DialogTitle sx={{ borderBottom: '1px solid #0c6525', padding: '5px', marginBottom:'10px'}}>The Powercube</DialogTitle>
             <DialogContent sx={{maxWidth: '560px'}} >
             <ProductInfo 
