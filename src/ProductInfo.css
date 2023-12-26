@@ -103,3 +103,56 @@ br{
 #batt1{
  margin-right: 10px;
 }
+.popover__btn > button{
+    background-color: #444;
+    color: #aaa;
+    font-weight: bolder;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 0;
+}
+.power{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+}
+.power>div{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.power>div >p{
+    text-align: center;
+    line-height: 17px;
+}
+.feature__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.feature__list>p{
+background-color: var(--theme-ui-colors-primary);
+text-align: center;
+color: #ffffff;
+padding: 5px 10px;
+border-radius: 5px;
+margin: 5px;
+}
+.specification__info>div>div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    margin-top: 10px;
+}
+.specification__info>div{
+    margin-bottom: 20px;
+}
+.specification__info>div>div>p>span{
+}
