@@ -8,10 +8,12 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Product from './Product';
 import ProductInfo from './ProductInfo';
 import './MyDialog.css'
+import { useStateValue } from './StateProvider'
 
 
 
-function MyDialog() {
+function MyDialog({ id,name,image,description,price1,price2,capacity,battery,length,width,height,weight,AcCharging,solarCharging,solarPanels,power}) {
+  const [{products}] = useStateValue()
 
     const [open, setOpen] = useState(false);
 
@@ -25,22 +27,34 @@ function MyDialog() {
   return (
     <div className='dialog'>
         
-        <Button variant="text" onClick={handleClickOpen} className='dialog__button' sx={{ Width: "20%" ,textTransform: 'none',margin:'0',lineHeight:'1.3'}}>
+        <Button variant="text" onClick={handleClickOpen} className='dialog__button' sx={{textTransform: 'none',margin:'0',lineHeight:'1.3'}}>
             <Product 
-             id='1'
-             name='The Powercube'
-             image="https://www-konga-com-res.cloudinary.com/w_700,f_auto,fl_lossy,dpr_1.0,q_auto/media/catalog/product/A/Z/121504_1667161421.jpg"
-             description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ea perferendis nesciunt quos at neque dolore totam iste ipsa, dolorem iusto velit fugit animi expedita sunt deserunt voluptatibus quisquam sapiente!'
+             id={id}
+             name={name}
+             image={image[0]}
+             description={description}
             />
         </Button>
         <Dialog open={open} onClose={handleClose} maxWidth='xl' sx={{zIndex:1, }}>
         <DialogTitle sx={{ borderBottom: '1px solid #0c6525', padding: '5px', marginBottom:'10px'}}>The Powercube</DialogTitle>
             <DialogContent sx={{maxWidth: '560px'}} >
             <ProductInfo 
-             id='1'
-             name='The Powercube'
-             image="https://www-konga-com-res.cloudinary.com/w_700,f_auto,fl_lossy,dpr_1.0,q_auto/media/catalog/product/A/Z/121504_1667161421.jpg"
-             description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ea perferendis nesciunt quos at neque dolore totam iste ipsa, dolorem iusto velit fugit animi expedita sunt deserunt voluptatibus quisquam sapiente!'
+            id={id}
+            name={name}
+            capacity={capacity}
+            battery={battery}
+            price1={price1}
+            price2={price2}
+            description={description}
+            image={image}
+            length={length}
+            width={width}
+            height={height}
+            weight={weight}
+            AcCharging={AcCharging}
+            solarCharging={solarCharging}
+            solarPanels={solarPanels}
+            power={power}
             />
             </DialogContent>
             <DialogActions>

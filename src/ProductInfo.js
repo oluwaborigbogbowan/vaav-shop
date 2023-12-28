@@ -9,18 +9,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
 
 
-function ProductInfo({ name, image, description}) {
+function ProductInfo({ name,image,description,price1,price2,capacity,battery,length,width,height,weight,AcCharging,solarCharging,solarPanels,power}) {
 
   const [activeImage, setActiveImage] = useState(0)
-  const[price,setPrice] = useState('500,000')
-  const[battery,setBattery] = useState('500')
-  const handle500 = ()=>{
-    setBattery('500')
-    setPrice('500,000')
+  const[price,setPrice] = useState(price1)
+  
+  const handleAlone = ()=>{
+    
+    setPrice(price1)
   }
-  const handle1000 = ()=>{
-    setBattery('1000')
-    setPrice('700,000')
+  const handleSolar = ()=>{
+    
+    setPrice(price2)
   }
 
   const img = [
@@ -50,9 +50,9 @@ function ProductInfo({ name, image, description}) {
     <div className='productInfo'>
       <section className='productInfo__upper'>
         <div className="productInfo__img">
-          <img src={img[activeImage]} alt="" className='productinfo__img__main'/>
+          <img src={image[activeImage]} alt="" className='productinfo__img__main'/>
           <div className="productInfo__img__button">
-            {img.map((img,index)=>(
+            {image.map((img,index)=>(
               <button key={index} onClick={()=>handleImageChange(index)}>
                 <img src={img} alt="" />
               </button>
@@ -66,8 +66,8 @@ function ProductInfo({ name, image, description}) {
             <strong>{price}</strong>
           </p>
           <div className="productInfo__battery">
-            <button id='batt1' onClick={handle500}>500Wh</button>
-            <button id='batt2' onClick={handle1000}>1000Wh</button>
+            <button id='batt1' onClick={handleAlone}>Alone</button>
+            <button id='batt2' onClick={handleSolar}>With solar </button>
           </div>
           <div className="productInfo__button">
               <button aria-describedby={id} type="button" onClick={handleClick} className='btn1'>
@@ -98,53 +98,22 @@ function ProductInfo({ name, image, description}) {
       </section>
       <div className="productInfo__description">
         <p>Description :</p>
-        <p>The PowerCube X, a portable Powerstattion with battery capacity of
-            960Wh and output Power of 500W.
-            Longer battery life that supports your daily needs. The power station
-            can power your homes, shops and even support you for up to 10
-            hours during blackouts. Charge quickly with Solar or AC (Nepa)
-          </p>
+        <p>{description}</p>
           <div className="power">
+            {
+              power.map(power=>(
+
             <div>
-              <img src="/icons/bulb-svgrepo-com.svg" alt="bulb" className='icon'/>
+              <img src={power.img} alt={power.img} className='icon'/>
               <p >
-                  <small>Bulb<br/>
-                  &#40;10W&#41;</small><br/>
-                  <strong>96 hours</strong>
+                  <small>{power.device}<br/>
+                  &#40;{power.rating}&#41;</small><br/>
+                  <strong>{power.hours}</strong>
               </p>
             </div>
-            <div>
-              <img src="/icons/fan-cooler-svgrepo-com.svg" alt="fan" className='icon'/>
-              <p >
-                  <small>Fan<br/>
-                  &#40;45W&#41;</small><br/>
-                  <strong>20 hours</strong>
-              </p>
-            </div>
-            <div>
-              <img src="/icons/tv-monitor-svgrepo-com.svg" alt="tv" className='icon'/>
-              <p >
-                  <small>TV<br/>
-                  &#40;150W&#41;</small><br/>
-                  <strong>6 hours</strong>
-              </p>
-            </div>
-            <div>
-              <img src="/icons/laptop-svgrepo-com.svg" alt="laptop" className='icon'/>
-              <p >
-                  <small>Laptop<br/>
-                  &#40;65W&#41;</small><br/>
-                  <strong>15 hours</strong>
-              </p>
-            </div>
-            <div>
-              <img src="/icons/phone-svgrepo-com.svg" alt="phone" className='icon'/>
-              <p >
-                  <small>Phone<br/>
-                  &#40;30W&#41;</small><br/>
-                  <strong>33 hours</strong>
-              </p>
-            </div>
+              ))
+            }
+            
           </div>
       </div>
       <div className="productInfo__feature">
@@ -192,7 +161,7 @@ function ProductInfo({ name, image, description}) {
                   <h3>Battery</h3>
                   <div>
                   <p>Capacity:<br/>
-                    <span>2042.8Wh </span></p>
+                    <span>{battery}</span></p>
                   <p>Cell Chemistry:<br/>
                   <span>FP (LiFePO4 battery) </span></p>
                   <p>Cycle life:<br/>
@@ -214,22 +183,22 @@ function ProductInfo({ name, image, description}) {
                   <h3>Dimensions</h3>
                   <div>
                   <p>Length:<br/>
-                  <span>14.7in(37.36cm) </span></p>
+                  <span>{length} </span></p>
                   <p>Width:<br/>
-                  <span>18.6in(47.3cm) </span></p>
+                  <span>{width}</span></p>
                   <p>Height:<br/>
-                  <span>14.1in(35.94cm) </span></p>
+                  <span>{height} </span></p>
                   <p>Weight:<br/>
-                  <span>61.5 lbs(27.9 kg) </span></p>
+                  <span>{weight}</span></p>
                   </div>
                 </div>
                 <div>
                   <h3>Charging Time(0-100%)</h3>
                   <div>
                   <p>AC Adapter:<br/>
-                  <span>2 Hours </span></p>
+                  <span>{AcCharging}</span></p>
                   <p>Solar Panel:<br/>
-                  <span> 3 Hours</span></p>
+                  <span> {solarCharging}</span></p>
                   </div>
                 </div>
                 <div>
@@ -243,7 +212,7 @@ function ProductInfo({ name, image, description}) {
                   <h3>Solar Panel Combination</h3>
                   <div>
                   <p>180 W Panel:<br/>
-                  <span>3 panels </span></p>
+                  <span>{solarPanels}panels </span></p>
                   </div>
                 </div>
               </div>
