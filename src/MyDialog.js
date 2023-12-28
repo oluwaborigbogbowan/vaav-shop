@@ -36,7 +36,7 @@ function MyDialog({ id,name,image,description,price1,price2,capacity,battery,len
             />
         </Button>
         <Dialog open={open} onClose={handleClose} maxWidth='xl' sx={{zIndex:1, }}>
-        <DialogTitle sx={{ borderBottom: '1px solid #0c6525', padding: '5px', marginBottom:'10px'}}>The Powercube</DialogTitle>
+        <DialogTitle sx={{ borderBottom: '1px solid #0c6525', padding: '5px', marginBottom:'10px'}}>{name}</DialogTitle>
             <DialogContent sx={{maxWidth: '560px'}} >
             <ProductInfo 
             id={id}
