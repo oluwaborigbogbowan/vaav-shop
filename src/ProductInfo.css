@@ -22,6 +22,8 @@
 }
 .productInfo__img__button > button{
    padding: 0px;
+   background: none;
+   border-radius: 0px;
     
 
 }
