@@ -9,6 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
 
 
+
 function ProductInfo({ name,image,description,price1,price2,capacity,battery,length,width,height,weight,AcCharging,solarCharging,solarPanels,power}) {
 
   const [activeImage, setActiveImage] = useState(0)
@@ -23,11 +24,7 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
     setPrice(price2)
   }
 
-  const img = [
-    "https://www-konga-com-res.cloudinary.com/w_700,f_auto,fl_lossy,dpr_1.0,q_auto/media/catalog/product/A/Z/121504_1667161421.jpg",
-    'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/6899052/1.jpg?8665',
-    'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/6899052/2.jpg?8088',
-  ]
+  
   
   const handleImageChange = (newIndex) => {
     setActiveImage(newIndex);
@@ -66,21 +63,24 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
             <strong>{price}</strong>
           </p>
           <div className="productInfo__battery">
-            <button id='batt1' onClick={handleAlone}>Alone</button>
-            <button id='batt2' onClick={handleSolar}>With solar </button>
+          <Button variant="contained" id='batt1' onClick={handleAlone} sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Alone</Button>
+          <Button variant="contained" id='batt2' onClick={handleSolar} sx={{background: '#0c6525',padding:'5px','&:hover': {backgroundColor: 'gray'}}}>With solar</Button>
+            {/* <button id='batt1' onClick={handleAlone}>Alone</button> */}
+            {/* <button id='batt2' onClick={handleSolar}>With solar </button> */}
           </div>
           <div className="productInfo__button">
-              <button aria-describedby={id} type="button" onClick={handleClick} className='btn1'>
+          <Button variant="contained" aria-describedby={id}  onClick={handleClick} className='btn1' sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Buy</Button>
+              {/* <button  type="button" onClick={handleClick} >
               Buy
-              </button>
+              </button> */}
               <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
         }}
       >
                 <div className='popover__btn' >
@@ -91,8 +91,10 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
                 </div>
               </Popover>
             
-            <button className='btn2'>Rent</button>
-            <button className='btn3'>Pay Installmentally</button>
+              <Button variant="contained" className='btn3'  sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Installment</Button>
+              <Button variant="contained" className='btn2'  sx={{background: '#0c6525',padding:'5px','&:hover': {backgroundColor: 'gray'}}}>Rent</Button>
+            {/* <button className='btn2'>Rent</button> */}
+            {/* <button className='btn3'>Pay Installmentally</button> */}
           </div>
         </div>
       </section>

@@ -14,10 +14,10 @@
 .product__buttons{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
    
 }
-.product__buttons *{
+/* .product__buttons *{
     background-color: var(--theme-ui-colors-primary);
     border: none;
     color: #ffffff;
@@ -25,7 +25,7 @@
     padding: 4px 8px;
     border-radius: 10px;
     cursor: pointer;
-}
+} */
 .product__name{
     color: var(--theme-ui-colors-heading);
     font-size: 18px;

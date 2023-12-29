@@ -24,14 +24,9 @@
     margin-right: 5px;
     border: none;
 }
-.productInfo__button *{
-    background-color: var(--theme-ui-colors-primary);
-    border: none;
-    color: #ffffff;
-    font: 16px;
-    padding: 4px 8px;
-    border-radius: 10px;
-    cursor: pointer;
+.productInfo__button {
+    display: flex;
+    margin-top: 10px;
 }
 .btn1 , .btn2 {
     margin-right: 5px;
@@ -85,7 +80,7 @@
 br{
     margin: 0;
 }
-.productInfo__battery *{
+/* .productInfo__battery *{
     background-color: var(--theme-ui-colors-primary);
     border: none;
     color: #ffffff;
@@ -96,13 +91,13 @@ br{
     margin-bottom: 5px;
     width: 45%;
     
-}
+} */
 .productInfo__battery *:focus{
     opacity: 0.3;
 }
-#batt1{
+/* #batt1{
  margin-right: 10px;
-}
+} */
 .popover__btn > button{
     background-color: #444;
     color: #aaa;
@@ -155,4 +150,23 @@ margin: 5px;
 }
 .specification__info>div{
     margin-bottom: 20px;
+}
+@media screen and (max-width: 768px){
+    .productInfo__upper{
+        flex-direction: column;
+    }
+    .power{
+        grid-template-columns: repeat(3,1fr);
+        grid-row-gap: 5px;
+    }
+    .productInfo__namePrice{
+        margin-top: 10px;
+    }
+    .feature__list{
+        grid-template-columns: 1fr;
+    }
+    .specification__info>div>div{
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+    }
 }

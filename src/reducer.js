@@ -37,7 +37,7 @@ export const initialState = {
                 },
                 {
                     device:'Laptop',
-                    img:'public/icons/laptop-svgrepo-com.svg',
+                    img:'/icons/laptop-svgrepo-com.svg',
                     rating:'65W',
                     hours:'15 hours'
                 },
