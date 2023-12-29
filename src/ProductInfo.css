@@ -20,11 +20,10 @@
     width: 35px;
     height: 35px;
 }
-.productInfo__img__button * button{
-    margin-right: 5px;
-    border: none;
-    background: none;
-    margin: 0px;
+.productInfo__img__button > button{
+   padding: 0px;
+    
+
 }
 .productInfo__button {
     display: flex;
