@@ -7,6 +7,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 
 
@@ -30,18 +32,21 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
     setActiveImage(newIndex);
   };
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl1, setAnchorEl1] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
+  const [anchorEl3, setAnchorEl3] = useState(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = (event, anchorElSetter) => {
+    anchorElSetter(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClose = (anchorElSetter) => {
+    anchorElSetter(null);
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const open1 = Boolean(anchorEl1);
+  const open2 = Boolean(anchorEl2);
+  const open3 = Boolean(anchorEl3);
 
   return (
     <div className='productInfo'>
@@ -69,19 +74,22 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
             {/* <button id='batt2' onClick={handleSolar}>With solar </button> */}
           </div>
           <div className="productInfo__button">
-          <Button variant="contained" aria-describedby={id}  onClick={handleClick} className='btn1' sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Buy</Button>
+          <Button variant="contained"   onClick={(e) => handleClick(e, setAnchorEl1)} className='btn1' sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Buy</Button>
               {/* <button  type="button" onClick={handleClick} >
               Buy
               </button> */}
               <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
+                open={open1}
+                anchorEl={anchorEl1}
+                onClose={() => handleClose(setAnchorEl1)}
                 anchorOrigin={{
                   vertical: 'top',
-                  horizontal: 'left',
-        }}
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
       >
                 <div className='popover__btn' >
                   <Button color='primary' > Card </Button>
@@ -91,8 +99,50 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
                 </div>
               </Popover>
             
-              <Button variant="contained" className='btn3'  sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Installment</Button>
-              <Button variant="contained" className='btn2'  sx={{background: '#0c6525',padding:'5px','&:hover': {backgroundColor: 'gray'}}}>Rent</Button>
+              <Button variant="contained" className='btn3' onClick={(e) => handleClick(e, setAnchorEl2)}  sx={{background: '#0c6525',padding:'5px', marginRight: '5px','&:hover': {backgroundColor: 'gray'}}}>Installment</Button>
+              <Popover
+                open={open2}
+                anchorEl={anchorEl2}
+                onClose={() => handleClose(setAnchorEl2)}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+              >
+                <Alert severity="info">
+                <AlertTitle>Installment</AlertTitle>
+                Price:
+                <small>&#x20A6;</small>
+                 <strong>{price}</strong><br/>
+                 Installment coming soon...
+                </Alert>
+              </Popover>
+              <Button variant="contained" className='btn2' onClick={(e) => handleClick(e, setAnchorEl3)} sx={{background: '#0c6525',padding:'5px','&:hover': {backgroundColor: 'gray'}}}>Rent</Button>
+              <Popover
+                open={open3}
+                anchorEl={anchorEl3}
+                onClose={() => handleClose(setAnchorEl3)}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+              >
+                <Alert severity="info">
+                <AlertTitle>Rent</AlertTitle>
+                Price:
+                <small>&#x20A6;</small>
+                 <strong>{price}</strong><br/>
+                 Rental coming soon...
+                </Alert>
+              </Popover>
             {/* <button className='btn2'>Rent</button> */}
             {/* <button className='btn3'>Pay Installmentally</button> */}
           </div>

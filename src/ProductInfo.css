@@ -95,7 +95,7 @@ br{
     width: 45%;
     
 } */
-.productInfo__battery *:focus{
+button:not(.dialog__button):focus{
     opacity: 0.3;
 }
 /* #batt1{
