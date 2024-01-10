@@ -6,7 +6,7 @@ export const initialState = {
             capacity:'500W',
             battery:'960Wh',
             price1: '250000',
-            price2: '280000',
+            price2: '330000',
             description:'The PowerCube , a portable Powerstattion with battery capacity of 960Wh and output Power of 500W. Longer battery life that supports your daily needs. The power station can power your homes, shops and even support you for up to 10hours during blackouts. Charge quickly with Solar or AC (Nepa)',
             image:['https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/6899052/1.jpg?8665','https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/6899052/3.jpg?8088','https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/6899052/6.jpg?8088'],
             length:'12in(24cm)',
