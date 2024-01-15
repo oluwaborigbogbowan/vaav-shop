@@ -47,6 +47,11 @@
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
+.productInfo__description>p:nth-child(1), .productInfo__feature>p:nth-child(1){
+    color: var(--theme-ui-colors-primary);
+    font-size: 17px;
+    font-weight: 600;
+}
 
 .productInfo__specification{
     font-size: 15px;

@@ -27,16 +27,15 @@
     cursor: pointer;
 } */
 .product__name{
-    color: var(--theme-ui-colors-heading);
+    color: var(--theme-ui-colors-primary);
     font-size: 18px;
     margin-bottom: 5px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid var(--theme-ui-colors-primary);
 }
 .product__description{
-    color: var(--theme-ui-colors-heading);
-    opacity: 0.75;
-    font-size: 15px;
-    
+    color: var(--theme-ui-colors-primary);
+    font-size: 17px;
+    font-weight: 600;
 }
 .product__description__info{
     color: var(--theme-ui-colors-heading);

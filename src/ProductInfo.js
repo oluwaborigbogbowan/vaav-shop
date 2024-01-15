@@ -184,7 +184,7 @@ function ProductInfo({ name,image,description,price1,price2,capacity,battery,len
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Specification</Typography>
+          <Typography sx={{color:'#0c6525',fontSize:'17px'}}>Specification</Typography>
         </AccordionSummary>
         <AccordionDetails>
             <Accordion>
