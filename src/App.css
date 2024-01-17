@@ -8,7 +8,7 @@
 
 body{
   /* background:  linear-gradient(to bottom, var(--theme-ui-colors-primary), var(--theme-ui-colors-background)); */
-  background-color: var(--theme-ui-colors-border_color);
+  background-color: white;
   height: 100vh;
   
 }
