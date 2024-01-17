@@ -34,8 +34,9 @@
 }
 .product__description{
     color: var(--theme-ui-colors-primary);
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
+    
 }
 .product__description__info{
     color: var(--theme-ui-colors-heading);

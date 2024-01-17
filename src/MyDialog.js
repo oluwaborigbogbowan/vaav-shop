@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import DialogTitle from '@mui/material/DialogTitle';
 import Product from './Product';
 import ProductInfo from './ProductInfo';
@@ -35,9 +35,16 @@ function MyDialog({ id,name,image,description,price1,price2,capacity,battery,len
              description={description}
             />
         </Button>
-        <Dialog open={open} onClose={handleClose} maxWidth='xl' sx={{zIndex:1, }}>
-        <DialogTitle sx={{ borderBottom: '1px solid #0c6525', padding: '5px', marginBottom:'10px',color:'#0c6525',fontWeight:'600'}}>{name}</DialogTitle>
-            <DialogContent sx={{maxWidth: '560px'}} >
+        <Dialog open={open} fullWidth maxWidth= 'md' sx={{zIndex:1, }}>
+        <DialogTitle sx={{ borderBottom: '1px solid #0c6525', padding: '5px', marginBottom:'10px',color:'#0c6525',fontWeight:'600', display:'flex',justifyContent:'space-between'}}>{name}
+        
+        
+            
+            <CancelOutlinedIcon fontSize='large' onClick={handleClose} sx={{color:'#d62828'}}/>
+            
+            
+        </DialogTitle>
+            <DialogContent  >
             <ProductInfo 
             id={id}
             name={name}
@@ -57,11 +64,7 @@ function MyDialog({ id,name,image,description,price1,price2,capacity,battery,len
             power={power}
             />
             </DialogContent>
-            <DialogActions>
-            <Button onClick={handleClose} color="primary">
-                Close
-            </Button>
-            </DialogActions>
+            
         </Dialog>
     </div>
   )

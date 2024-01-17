@@ -1,4 +1,7 @@
 
+.productInfo{
+    width: 100%;
+}
 .productInfo__upper{
     display: flex;
     margin-bottom: 10px;
@@ -6,7 +9,7 @@
     border-bottom: 1px solid var(--theme-ui-colors-primary);
 }
 .productInfo__img{
-    width: 300px;
+    width: 350px;
     margin-right: 10px;
 }
 
